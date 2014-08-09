@@ -88,7 +88,8 @@ set cursorline                                        "突出显示当前行
 " set guifont=YaHei_Consolas_Hybrid:h10                 "设置字体:字号（字体名称空格用下划线代替）
 set nowrap                                            "设置不自动换行
 set shortmess=atI                                     "去掉欢迎界面
-
+set incsearch                                         "在输入要搜索的文字时，vim会实时匹配
+set hlsearch                                          " 高亮显示结果
 
 " 设置代码配色方案
 if g:isGUI
@@ -128,3 +129,13 @@ if g:isGUI
     \endif<CR>
 endif
 
+
+" 按键映射
+:map <C-c> "+y<CR>
+:map <C-v> "+p<CR>
+:map <C-x> "+x<CR>
+:map <C-z> u
+:map <C-s> :w<CR>
+:map <C-a> ggVG
+:map <C-w> ZZ
+:map <F12> :e $HOME/.vimrc<CR>
