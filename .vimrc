@@ -27,12 +27,19 @@ endif
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-
+call pathogen#infect()
 " Bundle
 
 Bundle 'git://github.com/scrooloose/nerdtree'
 Bundle 'git://github.com/mattn/emmet-vim'
 Bundle 'git://github.com/slim-template/vim-slim.git'
+Bundle 'git://github.com/junegunn/vim-easy-align'
+Bundle 'mileszs/ack.vim'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'bling/vim-airline'
+Bundle 'jQuery'
+Bundle 'tpope/vim-rails.git'
 
 " NerdTree
 
@@ -70,9 +77,10 @@ set expandtab                                         "将Tab键转换为空格
 set tabstop=2                                         "设置Tab键的宽度
 set shiftwidth=2                                      "换行时自动缩进4个空格
 set smarttab                                          "指定按一次backspace就删除shiftwidth宽度的空格
-  
-syntax enable                " 打开语法高亮
-syntax on                    " 开启文件类型侦测
+set autochdir                                         "设置工作路径
+set autoindent                                        "自动缩进
+syntax enable                                         "打开语法高亮
+syntax on                                             "开启文件类型侦测
 
 " 设置文件编码和文件格式
 set fenc=utf-8
@@ -129,6 +137,13 @@ if g:isGUI
     \endif<CR>
 endif
 
+" Ctags
+map <C-F12> :!ctags -R --fields=+iaS --extra=+q .<CR>
+
+":set ff=unix
+map <C-S-F1> :%s/\r\+$//e <CR>
+map <C-S-F2> :1,$,%s/^I/    /g <CR>
+
 
 " 按键映射
 :map <C-c> "+y<CR>
@@ -137,5 +152,7 @@ endif
 :map <C-z> u
 :map <C-s> :w<CR>
 :map <C-a> ggVG
-:map <C-w> ZZ
+:map <C-w> :q<CR>
+:map <C-t> :vnew<CR>
+:map <C-S-t> :vsplit<CR>
 :map <F12> :e $HOME/.vimrc<CR>
