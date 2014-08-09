@@ -874,13 +874,6 @@ set guifont=DejaVu_Sans_Mono:h11
 elseif has("gui_win32")  
 set guifont=YaHei_Consolas_Hybrid:h10
 end  
-  
-
-set noexpandtab
-set ts=4
-set nu
-set autoindent
-"color ron
 
 set foldlevel=9999999999
 
