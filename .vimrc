@@ -27,7 +27,7 @@ endif
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-call pathogen#infect()
+
 " Bundle
 
 Bundle 'git://github.com/scrooloose/nerdtree'
