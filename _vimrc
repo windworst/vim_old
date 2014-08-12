@@ -36,6 +36,7 @@ Bundle 'git://github.com/mattn/emmet-vim'
 Bundle 'git://github.com/slim-template/vim-slim.git'
 Bundle 'git://github.com/junegunn/vim-easy-align'
 Bundle 'mileszs/ack.vim'
+Bundle 'scrooloose/syntastic.git' 
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'bling/vim-airline'
@@ -43,6 +44,7 @@ Bundle 'jQuery'
 Bundle 'tpope/vim-rails.git'
 Bundle 'bling/vim-bufferline.git'
 Bundle 'majutsushi/tagbar'
+Bundle 'ngmy/vim-rubocop.git'
 
 " NerdTree
 
