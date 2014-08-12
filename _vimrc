@@ -1,5 +1,3 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
 " =============================================================================
 "        << 判断操作系统是 Windows 还是 Linux 和判断是终端还是 Gvim >>
 " =============================================================================
@@ -89,6 +87,7 @@ set autochdir                                         "设置工作路径
 set autoindent                                        "自动缩进
 syntax enable                                         "打开语法高亮
 syntax on                                             "开启文件类型侦测
+set nocompatible                                      " be iMproved, required
 
 " 设置文件编码和文件格式
 set fenc=utf-8
