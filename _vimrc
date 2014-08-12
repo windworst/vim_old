@@ -30,6 +30,7 @@ call vundle#rc()
 
 " Bundle
 
+Bundle 'vim-scripts/ctags.vim'
 Bundle 'git://github.com/scrooloose/nerdtree'
 Bundle 'git://github.com/mattn/emmet-vim'
 Bundle 'git://github.com/slim-template/vim-slim.git'
@@ -40,12 +41,15 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'bling/vim-airline'
 Bundle 'jQuery'
 Bundle 'tpope/vim-rails.git'
+Bundle 'bling/vim-bufferline.git'
+Bundle 'majutsushi/tagbar'
 
 " NerdTree
 
 let NERDChristmasTree=1
 let NERDTreeAutoCenter=1
 nnoremap <silent> <F5> :NERDTreeToggle<CR>
+nnoremap <silent> <F6> :TagbarToggle<CR>
 
 
 " 对部分语言设置单独的缩进
