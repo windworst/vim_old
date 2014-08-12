@@ -1,3 +1,5 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
 " =============================================================================
 "        << 判断操作系统是 Windows 还是 Linux 和判断是终端还是 Gvim >>
 " =============================================================================
@@ -25,32 +27,34 @@ endif
 " -----------------------------------------------------------------------------
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'vim-scripts/ctags.vim'
+Plugin 'git://github.com/scrooloose/nerdtree'
+Plugin 'git://github.com/mattn/emmet-vim'
+Plugin 'git://github.com/slim-template/vim-slim.git'
+Plugin 'git://github.com/junegunn/vim-easy-align'
+Plugin 'scrooloose/syntastic.git' 
+Plugin 'mileszs/ack.vim'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'bling/vim-airline'
+Plugin 'jQuery'
+Plugin 'tpope/vim-rails.git'
+Plugin 'bling/vim-bufferline.git'
+Plugin 'majutsushi/tagbar'
+Plugin 'ngmy/vim-rubocop.git'
 
-" Bundle
-
-Bundle 'vim-scripts/ctags.vim'
-Bundle 'git://github.com/scrooloose/nerdtree'
-Bundle 'git://github.com/mattn/emmet-vim'
-Bundle 'git://github.com/slim-template/vim-slim.git'
-Bundle 'git://github.com/junegunn/vim-easy-align'
-Bundle 'mileszs/ack.vim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'bling/vim-airline'
-Bundle 'jQuery'
-Bundle 'tpope/vim-rails.git'
-Bundle 'bling/vim-bufferline.git'
-Bundle 'majutsushi/tagbar'
-
+call vundle#end()            " required
+filetype plugin indent on    " required
 " NerdTree
 
 let NERDChristmasTree=1
 let NERDTreeAutoCenter=1
 nnoremap <silent> <F5> :NERDTreeToggle<CR>
-nnoremap <silent> <F6> :TagbarToggle<CR>
-
+" nnoremap <silent> <F6> :TagbarToggle<CR>
+" Tagbar
+nmap <F8> :TagbarToggle <CR>
 
 " 对部分语言设置单独的缩进
 au FileType ruby,javascript,css,eruby,slim,coffee,sh,scss,sass set shiftwidth=2
@@ -112,8 +116,8 @@ endif
 
 " 设置字体
 
-"set guifont=DejaVu\ Sans\ mono\ 11 
-set guifont=YaHei_Consolas_Hybrid:h10
+" set guifont=DejaVu\ Sans\ mono\ 11 
+" set guifont=YaHei_Consolas_Hybrid:h10
 if has("gui_gtk2")  
 set guifont=DejaVu\ Sans\ Mono\ 11                                    
 elseif has("gui_macvim")  
