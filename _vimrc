@@ -5,6 +5,10 @@
 " -----------------------------------------------------------------------------
 "  < 判断操作系统是否是 Windows 还是 Linux >
 " -----------------------------------------------------------------------------
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
 let g:iswindows = 0
 let g:islinux = 0
 if(has("win32") || has("win64") || has("win95") || has("win16"))
@@ -46,6 +50,8 @@ Bundle 'bling/vim-bufferline.git'
 Bundle 'majutsushi/tagbar'
 Bundle 'ngmy/vim-rubocop.git'
 
+filetype plugin indent on    " required
+
 " NerdTree
 
 let NERDChristmasTree=1
@@ -67,6 +73,7 @@ au BufRead,BufNewFile *.sql setlocal ft=mysql
 au BufRead,BufNewFile *.txt setlocal ft=txt
 au BufRead,BufNewFile *.slim setlocal ft=slim
 au BufRead,BufNewFile *.coffee setlocal ft=coffee
+au BufRead,BufNewFile *.rb setlocal ft=ruby
 
 
 " 设置不备份,不用交换文件
@@ -150,6 +157,19 @@ map <C-F12> :!ctags -R --fields=+iaS --extra=+q .<CR>
 map <C-S-F1> :%s/\r\+$//e <CR>
 map <C-S-F2> :1,$,%s/^I/    /g <CR>
 
+" syntastic
+let g:syntastic_check_on_open = 1
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = 'W'
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_loc_list_height = 5
+let g:syntastic_enable_highlighting = 1
+" let g:syntastic_mode_map = { 'passive_filetypes': ['scss'] }
+" let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_ruby_checkers=['rubocop']
+let g:syntastic_ruby_exec = 'ruby2.1.1'
+let g:syntastic_ruby_mri_checkers = ['rubocop']
+let g:syntastic_coffee_coffeelint_args = "--csv --file ~/coffee-config.json"
 
 " 按键映射
 :map <C-c> "+y<CR>
@@ -158,7 +178,7 @@ map <C-S-F2> :1,$,%s/^I/    /g <CR>
 :map <C-z> u
 :map <C-s> :w<CR>
 :map <C-a> ggVG
-:map <C-w> :q<CR>
+" :map <C-w> :q<CR>
 :map <C-t> :vnew<CR>
 :map <C-S-t> :vsplit<CR>
 :map <F12> :e $HOME/.vimrc<CR>
