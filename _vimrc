@@ -94,6 +94,7 @@ set autochdir                                         "设置工作路径
 set autoindent                                        "自动缩进
 syntax enable                                         "打开语法高亮
 syntax on                                             "开启文件类型侦测
+set list
 
 " 设置文件编码和文件格式
 set fenc=utf-8
