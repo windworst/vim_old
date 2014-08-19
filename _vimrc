@@ -182,4 +182,5 @@ let g:syntastic_coffee_coffeelint_args = "--csv --file ~/coffee-config.json"
 " :map <C-w> :q<CR>
 :map <C-t> :vnew<CR>
 :map <C-S-t> :vsplit<CR>
+:map <C-i> :1,$,%s/^I/    /g <CR>
 :map <F12> :e $HOME/.vimrc<CR>
