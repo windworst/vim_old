@@ -49,6 +49,7 @@ Bundle 'tpope/vim-rails.git'
 Bundle 'bling/vim-bufferline.git'
 Bundle 'majutsushi/tagbar'
 Bundle 'ngmy/vim-rubocop.git'
+Bundle 'scrooloose/nerdcommenter'
 
 filetype plugin indent on    " required
 
