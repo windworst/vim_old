@@ -168,6 +168,7 @@ let g:syntastic_enable_highlighting = 1
 " let g:syntastic_mode_map = { 'passive_filetypes': ['scss'] }
 " let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_ruby_checkers=['rubocop']
+let g:syntastic_python_checkers=['python3']
 let g:syntastic_ruby_exec = 'ruby2.1.1'
 let g:syntastic_ruby_mri_checkers = ['rubocop']
 let g:syntastic_coffee_coffeelint_args = "--csv --file ~/coffee-config.json"
