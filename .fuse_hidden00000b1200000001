@@ -39,10 +39,10 @@ end
 
 " set the runtime path to include Vundle and initialize
 if g:islinux
-    set rtp+=~/.vim/bundle/Vundle.vim/
+    set rtp+=~/.vim/bundle/vundle/
     call vundle#rc()
 else
-    set rtp+=$VIM/vimfiles/bundle/Vundle.vim/
+    set rtp+=$VIM/vimfiles/bundle/vundle/
     call vundle#rc('$VIM/vimfiles/bundle/')
 endif
 
@@ -50,7 +50,7 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " Bundle
-Bundle 'gmarik/Vundle.vim'
+
 Bundle 'vim-scripts/ctags.vim'
 Bundle 'git://github.com/scrooloose/nerdtree'
 Bundle 'git://github.com/mattn/emmet-vim'
