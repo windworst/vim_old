@@ -5,10 +5,7 @@
 " -----------------------------------------------------------------------------
 "  < 判断操作系统是否是 Windows 还是 Linux >
 " -----------------------------------------------------------------------------
-
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
+"
 let g:iswindows = 0
 let g:islinux = 0
 if(has("win32") || has("win64") || has("win95") || has("win16"))
@@ -93,6 +90,18 @@ au BufRead,BufNewFile *.slim setlocal ft=slim
 au BufRead,BufNewFile *.coffee setlocal ft=coffee
 au BufRead,BufNewFile *.rb setlocal ft=ruby
 
+if (g:iswindows && g:isGUI)
+    "解决菜单乱码
+    source $VIMRUNTIME/delmenu.vim
+    source $VIMRUNTIME/menu.vim
+
+    "解决consle输出乱码
+    language messages zh_CN.utf-8
+endif
+
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
 " 设置不备份,不用交换文件
 set nobackup
@@ -114,6 +123,7 @@ syntax enable                                         "打开语法高亮
 syntax on                                             "开启文件类型侦测
 set list
 set backspace=2                                       "退格键
+set nu
 
 " 设置文件编码和文件格式
 set fenc=utf-8
