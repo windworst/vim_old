@@ -46,6 +46,9 @@ else
     call vundle#rc('$VIM/vimfiles/bundle/')
 endif
 
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
 " Bundle
 
 Bundle 'vim-scripts/ctags.vim'
@@ -89,19 +92,6 @@ au BufRead,BufNewFile *.txt setlocal ft=txt
 au BufRead,BufNewFile *.slim setlocal ft=slim
 au BufRead,BufNewFile *.coffee setlocal ft=coffee
 au BufRead,BufNewFile *.rb setlocal ft=ruby
-
-if (g:iswindows && g:isGUI)
-    "解决菜单乱码
-    source $VIMRUNTIME/delmenu.vim
-    source $VIMRUNTIME/menu.vim
-
-    "解决consle输出乱码
-    language messages zh_CN.utf-8
-endif
-
-
-set nocompatible              " be iMproved, required
-filetype off                  " required
 
 " 设置不备份,不用交换文件
 set nobackup
@@ -160,6 +150,16 @@ set guifont=DejaVu_Sans_Mono:h11
 elseif has("gui_win32")  
 set guifont=YaHei_Consolas_Hybrid:h10
 end  
+
+if (g:iswindows && g:isGUI)
+    "解决菜单乱码
+    source $VIMRUNTIME/delmenu.vim
+    source $VIMRUNTIME/menu.vim
+
+    "解决consle输出乱码
+    language messages zh_CN.utf-8
+endif
+
 
 " 显示/隐藏菜单栏、工具栏、滚动条，可用 Ctrl + F11 切换
 if g:isGUI
