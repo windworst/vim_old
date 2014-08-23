@@ -27,10 +27,27 @@ else
 endif
 
 " -----------------------------------------------------------------------------
+" VIM配置文件路径
+let g:vimrc_path = ""
+let g:vimrc_home_path = expand("$HOME/.vimrc")
+let g:vimrc_vimfile_path = expand("$VIM/_vimrc")
+
+if filereadable(g:vimrc_home_path)
+  let g:vimrc_path = g:vimrc_home_path
+elseif filereadable(g:vimrc_vimfile_path)
+  let g:vimrc_path = g:vimrc_vimfile_path
+end
+
+" -----------------------------------------------------------------------------
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+if g:islinux
+    set rtp+=~/.vim/bundle/vundle/
+    call vundle#rc()
+else
+    set rtp+=$VIM/vimfiles/bundle/vundle/
+    call vundle#rc('$VIM/vimfiles/bundle/')
+endif
 
 " Bundle
 
@@ -96,6 +113,7 @@ set autoindent                                        "自动缩进
 syntax enable                                         "打开语法高亮
 syntax on                                             "开启文件类型侦测
 set list
+set backspace=2                                       "退格键
 
 " 设置文件编码和文件格式
 set fenc=utf-8
@@ -156,8 +174,8 @@ endif
 map <C-F12> :!ctags -R --fields=+iaS --extra=+q .<CR>
 
 ":set ff=unix
-map <C-S-F1> :%s/\r\+$//e <CR>
-map <C-S-F2> :1,$,%s/^I/    /g <CR>
+map <C-S-F1> :%s/\r\+$//g <CR>
+map <C-S-F2> :%s/\t/  /g<CR>
 
 " syntastic
 let g:syntastic_check_on_open = 1
@@ -184,5 +202,4 @@ let g:syntastic_coffee_coffeelint_args = "--csv --file ~/coffee-config.json"
 " :map <C-w> :q<CR>
 :map <C-t> :vnew<CR>
 :map <C-S-t> :vsplit<CR>
-:map <C-i> :1,$,%s/^I/    /g <CR>
-:map <F12> :e $HOME/.vimrc<CR>
+:map <F12> :execute ":e ".g:vimrc_path<CR>
