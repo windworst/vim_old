@@ -75,6 +75,7 @@ Bundle 'bling/vim-bufferline.git'
 Bundle 'majutsushi/tagbar'
 Bundle 'ngmy/vim-rubocop.git'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'bronson/vim-trailing-whitespace'
 
 filetype plugin indent on    " required
 
