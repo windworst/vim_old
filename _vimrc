@@ -80,6 +80,7 @@ Bundle 'brookhong/cloudboard.vim'
 Bundle 'gregsexton/gitv'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Yggdroot/indentLine'
+Bundle 'chriskempson/vim-tomorrow-theme'
 
 filetype plugin indent on    " required
 
