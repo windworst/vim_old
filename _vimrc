@@ -76,6 +76,9 @@ Bundle 'majutsushi/tagbar'
 Bundle 'ngmy/vim-rubocop.git'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'bronson/vim-trailing-whitespace'
+Bundle 'brookhong/cloudboard.vim'
+Bundle 'gregsexton/gitv'
+Bundle 'tpope/vim-fugitive'
 
 filetype plugin indent on    " required
 
@@ -219,6 +222,6 @@ let g:syntastic_coffee_coffeelint_args = "--csv --file ~/coffee-config.json"
 :map <C-s> :w<CR>
 :map <C-a> ggVG
 " :map <C-w> :q<CR>
-:map <C-t> :vnew<CR>
-:map <C-S-t> :vsplit<CR>
+:map <C-n> :vnew<CR>
+:map <C-t> :vsplit<CR>
 :map <F12> :execute ":e ".g:vimrc_path<CR>
