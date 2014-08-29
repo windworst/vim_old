@@ -65,7 +65,7 @@ Bundle 'mattn/emmet-vim'
 Bundle 'slim-template/vim-slim.git'
 Bundle 'junegunn/vim-easy-align'
 Bundle 'mileszs/ack.vim'
-Bundle 'scrooloose/syntastic.git' 
+Bundle 'scrooloose/syntastic.git'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'bling/vim-airline'
@@ -79,6 +79,7 @@ Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'brookhong/cloudboard.vim'
 Bundle 'gregsexton/gitv'
 Bundle 'tpope/vim-fugitive'
+Bundle 'Yggdroot/indentLine'
 
 filetype plugin indent on    " required
 
@@ -97,7 +98,7 @@ au FileType php,java set shiftwidth=4
 au FileType php,java set tabstop=4
 
 
-" judge file-type by ext-name 
+" judge file-type by ext-name
 au BufRead,BufNewFile *.h   setlocal ft=c
 au BufRead,BufNewFile *.sql setlocal ft=mysql
 au BufRead,BufNewFile *.txt setlocal ft=txt
@@ -153,15 +154,15 @@ endif
 
 " font
 
-"set guifont=DejaVu\ Sans\ mono\ 11 
+"set guifont=DejaVu\ Sans\ mono\ 11
 set guifont=YaHei_Consolas_Hybrid:h10
-if has("gui_gtk2")  
-set guifont=DejaVu\ Sans\ Mono\ 11                                    
-elseif has("gui_macvim")  
-set guifont=DejaVu_Sans_Mono:h11  
-elseif has("gui_win32")  
+if has("gui_gtk2")
+set guifont=DejaVu\ Sans\ Mono\ 11
+elseif has("gui_macvim")
+set guifont=DejaVu_Sans_Mono:h11
+elseif has("gui_win32")
 set guifont=YaHei_Consolas_Hybrid:h10
-end  
+end
 
 if (g:iswindows && g:isGUI)
     "solve consle output mass code
@@ -171,10 +172,10 @@ if (g:iswindows && g:isGUI)
     language messages zh_CN.utf-8
 endif
 
-" back
- hi Normal guibg=#004040 guifg=White
+" color
+ hi Normal guibg=#000020 guifg=White
  hi LineNr guibg=#003366 guifg=#99ccff ctermbg=7777 ctermfg=blue
- hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=#005050 guifg=White
+ hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=#002000
 
 " Show/Hide Menu、Toolbar、RollLink，use Ctrl + F11 Switch
 if g:isGUI
