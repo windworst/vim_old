@@ -109,7 +109,7 @@ set nobackup
 set noswapfile
 set writebackup
 
-"  编写文件时的配置
+" Edit file
 filetype on
 filetype plugin on
 filetype plugin indent on
@@ -127,14 +127,14 @@ set backspace=2                                       "BackSpace enable
 set spelllang=en_GB.UTF-8                             "Spell Check
 set nu                                                "Line Number"
 
-" 设置文件编码和文件格式
+" File Encoding
 set fenc=utf-8
 set encoding=utf-8
 set fileencodings=utf-8,gbk,cp936,latin-1
 set fileformat=unix
 set fileformats=unix,dos,mac
 
-" 界面配置
+" Interface Configure
 set laststatus=2                                      " Enable Status Message
 set cmdheight=2
 set cursorline
@@ -151,7 +151,7 @@ else
     colorscheme Tomorrow-Night-Eighties               "Terminal
 endif
 
-" 设置字体
+" font
 
 "set guifont=DejaVu\ Sans\ mono\ 11 
 set guifont=YaHei_Consolas_Hybrid:h10
@@ -171,6 +171,10 @@ if (g:iswindows && g:isGUI)
     language messages zh_CN.utf-8
 endif
 
+" back
+ hi Normal guibg=#004040 guifg=White
+ hi LineNr guibg=#003366 guifg=#99ccff ctermbg=7777 ctermfg=blue
+ hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=#005050 guifg=White
 
 " Show/Hide Menu、Toolbar、RollLink，use Ctrl + F11 Switch
 if g:isGUI
