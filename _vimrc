@@ -188,11 +188,13 @@ if g:isGUI
         \set guioptions-=T <Bar>
         \set guioptions-=r <Bar>
         \set guioptions-=L <Bar>
+        \set guioptions-=b <Bar>
     \else <Bar>
         \set guioptions+=m <Bar>
         \set guioptions+=T <Bar>
         \set guioptions+=r <Bar>
         \set guioptions+=L <Bar>
+        \set guioptions+=b <Bar>
     \endif<CR>
 endif
 
@@ -218,35 +220,35 @@ let g:syntastic_ruby_exec = 'ruby2.1.1'
 let g:syntastic_ruby_mri_checkers = ['rubocop']
 let g:syntastic_coffee_coffeelint_args = "--csv --file ~/coffee-config.json"
 
- 
+
 "------------------------------------------------------------------------------
 "  < Compile, Link, Run >
 "------------------------------------------------------------------------------
 " F9 Save & Compile & Link & Run
 map <F9> :call Run()<CR>
 imap <F9> <ESC>:call Run()<CR>
- 
+
 " Ctrl + F9 Save & Compile
 map <c-F9> :call Compile()<CR>
 imap <c-F9> <ESC>:call Compile()<CR>
- 
+
 " Ctrl + F10 Save & Link
 map <c-F10> :call Link()<CR>
 imap <c-F10> <ESC>:call Link()<CR>
- 
+
 let s:LastShellReturn_C = 0
 let s:LastShellReturn_L = 0
 let s:ShowWarning = 1
 let s:Obj_Extension = '.o'
 let s:Exe_Extension = '.exe'
 let s:Sou_Error = 0
- 
+
 let s:windows_CFlags = 'gcc\ -fexec-charset=gbk\ -Wall\ -g\ -O0\ -c\ %\ -o\ %<.o'
 let s:linux_CFlags = 'gcc\ -Wall\ -g\ -O0\ -c\ %\ -o\ %<.o'
- 
+
 let s:windows_CPPFlags = 'g++\ -fexec-charset=gbk\ -Wall\ -g\ -O0\ -c\ %\ -o\ %<.o'
 let s:linux_CPPFlags = 'g++\ -Wall\ -g\ -O0\ -c\ %\ -o\ %<.o'
- 
+
 func! Compile()
     exe ":ccl"
     exe ":update"
@@ -306,7 +308,7 @@ func! Compile()
     endif
     exe ":setlocal makeprg=make"
 endfunc
- 
+
 func! Link()
     call Compile()
     if s:Sou_Error || s:LastShellReturn_C != 0
@@ -362,7 +364,7 @@ func! Link()
     endif
     setlocal makeprg=make
 endfunc
- 
+
 func! Run()
     let s:ShowWarning = 0
     call Link()
