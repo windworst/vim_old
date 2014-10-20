@@ -42,13 +42,13 @@ let vundle_path = "bundle/Vundle.vim/"
 let vundle_vim_path = "autoload/vundle.vim"
 if g:islinux
     if !filereadable(expand("$HOME/.vim/").vundle_path.vundle_vim_path)
-      :execute "!git clone https://github.com/gmarik/Vundle.vim.git".expand("$HOME/.vim/").vundle_path
+      :execute "!git clone https://github.com/gmarik/Vundle.vim.git".expand(" $HOME/.vim/").vundle_path
     end
     set rtp+=~/.vim/bundle/Vundle.vim/
     call vundle#rc()
 else
     if !filereadable(expand("$VIM/vimfiles/").vundle_path.vundle_vim_path)
-      :execute "!git clone https://github.com/gmarik/Vundle.vim.git".expand("$VIM/vimfiles/").vundle_path
+      :execute "!git clone https://github.com/gmarik/Vundle.vim.git".expand(" $VIM/vimfiles/").vundle_path
     end
     set rtp+=$VIM/vimfiles/bundle/Vundle.vim/
     call vundle#rc('$VIM/vimfiles/bundle/')
