@@ -68,7 +68,6 @@ Bundle 'mileszs/ack.vim'
 Bundle 'scrooloose/syntastic.git'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'bling/vim-airline'
 Bundle 'jQuery'
 Bundle 'tpope/vim-rails.git'
 Bundle 'bling/vim-bufferline.git'
@@ -80,6 +79,11 @@ Bundle 'gregsexton/gitv'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Yggdroot/indentLine'
 Bundle 'chriskempson/vim-tomorrow-theme'
+
+"  GUI Plugin$
+if g:isGUI
+  Bundle 'bling/vim-airline'
+endif
 
 filetype plugin indent on    " required
 
@@ -123,7 +127,7 @@ set autochdir
 set autoindent
 syntax enable
 syntax on
-set list
+" set list
 set backspace=2                                       "BackSpace enable
 set spelllang=en_GB.UTF-8                             "Spell Check
 set nu                                                "Line Number"
