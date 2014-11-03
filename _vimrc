@@ -58,6 +58,7 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " Bundle
+Bundle 'Ack.vim'
 Bundle 'gmarik/Vundle.vim'
 Bundle 'vim-scripts/ctags.vim'
 Bundle 'scrooloose/nerdtree'
