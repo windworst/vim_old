@@ -58,6 +58,7 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " Bundle
+Bundle 'a.vim'
 Bundle 'Ack.vim'
 Bundle 'gmarik/Vundle.vim'
 Bundle 'vim-scripts/ctags.vim'
@@ -80,6 +81,9 @@ Bundle 'gregsexton/gitv'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Yggdroot/indentLine'
 Bundle 'chriskempson/vim-tomorrow-theme'
+" for fun
+Bundle 'vim-scripts/TeTrIs.vim'
+Bundle 'uguu-org/vim-matrix-screensaver'
 
 "  GUI Plugin$
 if g:isGUI
