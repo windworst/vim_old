@@ -9,18 +9,18 @@
 let g:iswindows = 0
 let g:islinux = 0
 if(has("win32") || has("win64") || has("win95") || has("win16"))
-    let g:iswindows = 1
+  let g:iswindows = 1
 else
-    let g:islinux = 1
+  let g:islinux = 1
 endif
 
 " -----------------------------------------------------------------------------
 "  < Terminal or Gvim >
 " -----------------------------------------------------------------------------
 if has("gui_running")
-    let g:isGUI = 1
+  let g:isGUI = 1
 else
-    let g:isGUI = 0
+  let g:isGUI = 0
 endif
 
 " -----------------------------------------------------------------------------
@@ -41,17 +41,17 @@ end
 let vundle_path = "bundle/Vundle.vim/"
 let vundle_vim_path = "autoload/vundle.vim"
 if g:islinux
-    if !filereadable(expand("$HOME/.vim/").vundle_path.vundle_vim_path)
-      :execute "!git clone https://github.com/gmarik/Vundle.vim.git ".expand("$HOME/.vim/").vundle_path
-    end
-    set rtp+=~/.vim/bundle/Vundle.vim/
-    call vundle#rc()
+  if !filereadable(expand("$HOME/.vim/").vundle_path.vundle_vim_path)
+    :execute "!git clone https://github.com/gmarik/Vundle.vim.git ".expand("$HOME/.vim/").vundle_path
+  end
+  set rtp+=~/.vim/bundle/Vundle.vim/
+  call vundle#rc()
 else
-    if !filereadable(expand("$VIM/vimfiles/").vundle_path.vundle_vim_path)
-      :execute "!git clone https://github.com/gmarik/Vundle.vim.git ".expand("$VIM/vimfiles/").vundle_path
-    end
-    set rtp+=$VIM/vimfiles/bundle/Vundle.vim/
-    call vundle#rc('$VIM/vimfiles/bundle/')
+  if !filereadable(expand("$VIM/vimfiles/").vundle_path.vundle_vim_path)
+    :execute "!git clone https://github.com/gmarik/Vundle.vim.git ".expand("$VIM/vimfiles/").vundle_path
+  end
+  set rtp+=$VIM/vimfiles/bundle/Vundle.vim/
+  call vundle#rc('$VIM/vimfiles/bundle/')
 endif
 
 set nocompatible              " be iMproved, required
@@ -156,9 +156,9 @@ set hlsearch                                          " HighLight Search result
 
 " Code Color
 if g:isGUI
-    colorscheme Tomorrow-Night-Eighties               "Gvim
+  colorscheme Tomorrow-Night-Eighties               "Gvim
 else
-    colorscheme Tomorrow-Night-Eighties               "Terminal
+  colorscheme Tomorrow-Night-Eighties               "Terminal
 endif
 
 " font
@@ -166,45 +166,45 @@ endif
 "set guifont=DejaVu\ Sans\ mono\ 11
 set guifont=YaHei_Consolas_Hybrid:h10
 if has("gui_gtk2")
-set guifont=DejaVu\ Sans\ Mono\ 11
+  set guifont=DejaVu\ Sans\ Mono\ 11
 elseif has("gui_macvim")
-set guifont=DejaVu_Sans_Mono:h11
+  set guifont=DejaVu_Sans_Mono:h11
 elseif has("gui_win32")
-set guifont=YaHei_Consolas_Hybrid:h10
+  set guifont=YaHei_Consolas_Hybrid:h10
 end
 
 if (g:iswindows && g:isGUI)
-    "solve consle output mass code
-    source $VIMRUNTIME/delmenu.vim
-    source $VIMRUNTIME/menu.vim
+  "solve consle output mass code
+  source $VIMRUNTIME/delmenu.vim
+  source $VIMRUNTIME/menu.vim
 
-    language messages zh_CN.utf-8
+  language messages zh_CN.utf-8
 endif
 
 " color
- hi Normal guibg=#000020 guifg=White
- hi LineNr guibg=#003366 guifg=#99ccff ctermbg=7777 ctermfg=blue
- hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=#002000
+hi Normal guibg=#000020 guifg=White
+hi LineNr guibg=#003366 guifg=#99ccff ctermbg=7777 ctermfg=blue
+hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=#002000
 
 " Show/Hide Menu、Toolbar、RollLink，use Ctrl + F11 Switch
 if g:isGUI
-    set guioptions-=m
-    set guioptions-=T
-    set guioptions-=r
-    set guioptions-=L
-    map <silent> <c-F11> :if &guioptions =~# 'm' <Bar>
+  set guioptions-=m
+  set guioptions-=T
+  set guioptions-=r
+  set guioptions-=L
+  map <silent> <c-F11> :if &guioptions =~# 'm' <Bar>
         \set guioptions-=m <Bar>
         \set guioptions-=T <Bar>
         \set guioptions-=r <Bar>
         \set guioptions-=L <Bar>
         \set guioptions-=b <Bar>
-    \else <Bar>
+        \else <Bar>
         \set guioptions+=m <Bar>
         \set guioptions+=T <Bar>
         \set guioptions+=r <Bar>
         \set guioptions+=L <Bar>
         \set guioptions+=b <Bar>
-    \endif<CR>
+        \endif<CR>
 endif
 
 " Ctags
@@ -259,150 +259,150 @@ let s:windows_CPPFlags = 'g++\ -fexec-charset=gbk\ -Wall\ -g\ -O0\ -c\ %\ -o\ %<
 let s:linux_CPPFlags = 'g++\ -Wall\ -g\ -O0\ -c\ %\ -o\ %<.o'
 
 func! Compile()
-    exe ":ccl"
-    exe ":update"
-    if expand("%:e") == "c" || expand("%:e") == "cpp" || expand("%:e") == "cxx"
-        let s:Sou_Error = 0
-        let s:LastShellReturn_C = 0
-        let Sou = expand("%:p")
-        let Obj = expand("%:p:r").s:Obj_Extension
-        let Obj_Name = expand("%:p:t:r").s:Obj_Extension
-        let v:statusmsg = ''
-        if !filereadable(Obj) || (filereadable(Obj) && (getftime(Obj) < getftime(Sou)))
-            redraw!
-            if expand("%:e") == "c"
-                if g:iswindows
-                    exe ":setlocal makeprg=".s:windows_CFlags
-                else
-                    exe ":setlocal makeprg=".s:linux_CFlags
-                endif
-                echohl WarningMsg | echo " compiling..."
-                silent make
-            elseif expand("%:e") == "cpp" || expand("%:e") == "cxx"
-                if g:iswindows
-                    exe ":setlocal makeprg=".s:windows_CPPFlags
-                else
-                    exe ":setlocal makeprg=".s:linux_CPPFlags
-                endif
-                echohl WarningMsg | echo " compiling..."
-                silent make
-            endif
-            redraw!
-            if v:shell_error != 0
-                let s:LastShellReturn_C = v:shell_error
-            endif
-            if g:iswindows
-                if s:LastShellReturn_C != 0
-                    exe ":bo cope"
-                    echohl WarningMsg | echo " compilation failed"
-                else
-                    if s:ShowWarning
-                        exe ":bo cw"
-                    endif
-                    echohl WarningMsg | echo " compilation successful"
-                endif
-            else
-                if empty(v:statusmsg)
-                    echohl WarningMsg | echo " compilation successful"
-                else
-                    exe ":bo cope"
-                endif
-            endif
+  exe ":ccl"
+  exe ":update"
+  if expand("%:e") == "c" || expand("%:e") == "cpp" || expand("%:e") == "cxx"
+    let s:Sou_Error = 0
+    let s:LastShellReturn_C = 0
+    let Sou = expand("%:p")
+    let Obj = expand("%:p:r").s:Obj_Extension
+    let Obj_Name = expand("%:p:t:r").s:Obj_Extension
+    let v:statusmsg = ''
+    if !filereadable(Obj) || (filereadable(Obj) && (getftime(Obj) < getftime(Sou)))
+      redraw!
+      if expand("%:e") == "c"
+        if g:iswindows
+          exe ":setlocal makeprg=".s:windows_CFlags
         else
-            echohl WarningMsg | echo ""Obj_Name"is up to date"
+          exe ":setlocal makeprg=".s:linux_CFlags
         endif
+        echohl WarningMsg | echo " compiling..."
+        silent make
+      elseif expand("%:e") == "cpp" || expand("%:e") == "cxx"
+        if g:iswindows
+          exe ":setlocal makeprg=".s:windows_CPPFlags
+        else
+          exe ":setlocal makeprg=".s:linux_CPPFlags
+        endif
+        echohl WarningMsg | echo " compiling..."
+        silent make
+      endif
+      redraw!
+      if v:shell_error != 0
+        let s:LastShellReturn_C = v:shell_error
+      endif
+      if g:iswindows
+        if s:LastShellReturn_C != 0
+          exe ":bo cope"
+          echohl WarningMsg | echo " compilation failed"
+        else
+          if s:ShowWarning
+            exe ":bo cw"
+          endif
+          echohl WarningMsg | echo " compilation successful"
+        endif
+      else
+        if empty(v:statusmsg)
+          echohl WarningMsg | echo " compilation successful"
+        else
+          exe ":bo cope"
+        endif
+      endif
     else
-        let s:Sou_Error = 1
-        echohl WarningMsg | echo " please choose the correct source file"
+      echohl WarningMsg | echo ""Obj_Name"is up to date"
     endif
-    exe ":setlocal makeprg=make"
+  else
+    let s:Sou_Error = 1
+    echohl WarningMsg | echo " please choose the correct source file"
+  endif
+  exe ":setlocal makeprg=make"
 endfunc
 
 func! Link()
-    call Compile()
-    if s:Sou_Error || s:LastShellReturn_C != 0
-        return
-    endif
-    let s:LastShellReturn_L = 0
-    let Sou = expand("%:p")
-    let Obj = expand("%:p:r").s:Obj_Extension
-    if g:iswindows
-        let Exe = expand("%:p:r").s:Exe_Extension
-        let Exe_Name = expand("%:p:t:r").s:Exe_Extension
-    else
-        let Exe = expand("%:p:r")
-        let Exe_Name = expand("%:p:t:r")
-    endif
-    let v:statusmsg = ''
-    if filereadable(Obj) && (getftime(Obj) >= getftime(Sou))
-        redraw!
-        if !executable(Exe) || (executable(Exe) && getftime(Exe) < getftime(Obj))
-            if expand("%:e") == "c"
-                setlocal makeprg=gcc\ -o\ %<\ %<.o
-                echohl WarningMsg | echo " linking..."
-                silent make
-            elseif expand("%:e") == "cpp" || expand("%:e") == "cxx"
-                setlocal makeprg=g++\ -o\ %<\ %<.o
-                echohl WarningMsg | echo " linking..."
-                silent make
-            endif
-            redraw!
-            if v:shell_error != 0
-                let s:LastShellReturn_L = v:shell_error
-            endif
-            if g:iswindows
-                if s:LastShellReturn_L != 0
-                    exe ":bo cope"
-                    echohl WarningMsg | echo " linking failed"
-                else
-                    if s:ShowWarning
-                        exe ":bo cw"
-                    endif
-                    echohl WarningMsg | echo " linking successful"
-                endif
-            else
-                if empty(v:statusmsg)
-                    echohl WarningMsg | echo " linking successful"
-                else
-                    exe ":bo cope"
-                endif
-            endif
+  call Compile()
+  if s:Sou_Error || s:LastShellReturn_C != 0
+    return
+  endif
+  let s:LastShellReturn_L = 0
+  let Sou = expand("%:p")
+  let Obj = expand("%:p:r").s:Obj_Extension
+  if g:iswindows
+    let Exe = expand("%:p:r").s:Exe_Extension
+    let Exe_Name = expand("%:p:t:r").s:Exe_Extension
+  else
+    let Exe = expand("%:p:r")
+    let Exe_Name = expand("%:p:t:r")
+  endif
+  let v:statusmsg = ''
+  if filereadable(Obj) && (getftime(Obj) >= getftime(Sou))
+    redraw!
+    if !executable(Exe) || (executable(Exe) && getftime(Exe) < getftime(Obj))
+      if expand("%:e") == "c"
+        setlocal makeprg=gcc\ -o\ %<\ %<.o
+        echohl WarningMsg | echo " linking..."
+        silent make
+      elseif expand("%:e") == "cpp" || expand("%:e") == "cxx"
+        setlocal makeprg=g++\ -o\ %<\ %<.o
+        echohl WarningMsg | echo " linking..."
+        silent make
+      endif
+      redraw!
+      if v:shell_error != 0
+        let s:LastShellReturn_L = v:shell_error
+      endif
+      if g:iswindows
+        if s:LastShellReturn_L != 0
+          exe ":bo cope"
+          echohl WarningMsg | echo " linking failed"
         else
-            echohl WarningMsg | echo ""Exe_Name"is up to date"
+          if s:ShowWarning
+            exe ":bo cw"
+          endif
+          echohl WarningMsg | echo " linking successful"
         endif
+      else
+        if empty(v:statusmsg)
+          echohl WarningMsg | echo " linking successful"
+        else
+          exe ":bo cope"
+        endif
+      endif
+    else
+      echohl WarningMsg | echo ""Exe_Name"is up to date"
     endif
-    setlocal makeprg=make
+  endif
+  setlocal makeprg=make
 endfunc
 
 func! Run()
-    let s:ShowWarning = 0
-    call Link()
-    let s:ShowWarning = 1
-    if s:Sou_Error || s:LastShellReturn_C != 0 || s:LastShellReturn_L != 0
-        return
-    endif
-    let Sou = expand("%:p")
-    let Obj = expand("%:p:r").s:Obj_Extension
+  let s:ShowWarning = 0
+  call Link()
+  let s:ShowWarning = 1
+  if s:Sou_Error || s:LastShellReturn_C != 0 || s:LastShellReturn_L != 0
+    return
+  endif
+  let Sou = expand("%:p")
+  let Obj = expand("%:p:r").s:Obj_Extension
+  if g:iswindows
+    let Exe = expand("%:p:r").s:Exe_Extension
+  else
+    let Exe = expand("%:p:r")
+  endif
+  if executable(Exe) && getftime(Exe) >= getftime(Obj) && getftime(Obj) >= getftime(Sou)
+    redraw!
+    echohl WarningMsg | echo " running..."
     if g:iswindows
-        let Exe = expand("%:p:r").s:Exe_Extension
+      exe ":!%<.exe"
     else
-        let Exe = expand("%:p:r")
+      if g:isGUI
+        exe ":!gnome-terminal -e ./%<"
+      else
+        exe ":!./%<"
+      endif
     endif
-    if executable(Exe) && getftime(Exe) >= getftime(Obj) && getftime(Obj) >= getftime(Sou)
-        redraw!
-        echohl WarningMsg | echo " running..."
-        if g:iswindows
-            exe ":!%<.exe"
-        else
-            if g:isGUI
-                exe ":!gnome-terminal -e ./%<"
-            else
-                exe ":!./%<"
-            endif
-        endif
-        redraw!
-        echohl WarningMsg | echo " running finish"
-    endif
+    redraw!
+    echohl WarningMsg | echo " running finish"
+  endif
 endfunc
 
 " Key Mapping
@@ -413,6 +413,6 @@ endfunc
 :map <C-s> :w<CR>
 :map <C-a> ggVG
 " :map <C-w> :q<CR>
-:map <C-n> :vnew<CR>
+:map <C-n> :split<CR>
 :map <C-t> :vsplit<CR>
 :map <F12> :execute ":e ".g:vimrc_path<CR>
