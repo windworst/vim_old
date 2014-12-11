@@ -65,7 +65,7 @@ Bundle 'vim-scripts/ctags.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'mattn/emmet-vim'
 Bundle 'slim-template/vim-slim.git'
-Bundle 'junegunn/vim-easy-align'
+Bundle 'tsaleh/vim-align'
 Bundle 'mileszs/ack.vim'
 Bundle 'scrooloose/syntastic.git'
 Bundle 'kchmck/vim-coffee-script'
@@ -81,14 +81,10 @@ Bundle 'gregsexton/gitv'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Yggdroot/indentLine'
 Bundle 'chriskempson/vim-tomorrow-theme'
+Bundle 'Lokaltog/vim-powerline'
 " for fun
 Bundle 'vim-scripts/TeTrIs.vim'
 Bundle 'uguu-org/vim-matrix-screensaver'
-
-"  GUI Plugin$
-if g:isGUI
-  Bundle 'bling/vim-airline'
-endif
 
 filetype plugin indent on    " required
 
