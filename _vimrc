@@ -145,7 +145,7 @@ set laststatus=2                                      " Enable Status Message
 set cmdheight=2
 set cursorline
 " set guifont=YaHei_Consolas_Hybrid:h10
-set nowrap
+" set nowrap
 set shortmess=atI                                     "remove welcome-page
 set incsearch                                         "vim Realtime-match during search
 set hlsearch                                          " HighLight Search result
