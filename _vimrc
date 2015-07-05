@@ -58,6 +58,8 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " Bundle
+Bundle 'chriskempson/vim-tomorrow-theme'
+Bundle 'Lokaltog/vim-powerline'
 Bundle 'a.vim'
 Bundle 'Ack.vim'
 Bundle 'gmarik/Vundle.vim'
