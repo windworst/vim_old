@@ -82,8 +82,6 @@ Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'gregsexton/gitv'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Yggdroot/indentLine'
-Bundle 'chriskempson/vim-tomorrow-theme'
-Bundle 'Lokaltog/vim-powerline'
 " for fun
 Bundle 'vim-scripts/TeTrIs.vim'
 Bundle 'uguu-org/vim-matrix-screensaver'
