@@ -412,3 +412,13 @@ endfunc
 :map <C-n> :split<CR>
 :map <C-t> :vsplit<CR>
 :map <F12> :execute ":e ".g:vimrc_path<CR>
+
+
+"""""""""""""""""""""""""""""""""""""""
+"
+""             ctrap
+"
+""""""""""""""""""""""""""""""""""""""""
+" ctrap
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.png,*.jpg,*.jpeg,*.gif "MacOSX/Linux
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
