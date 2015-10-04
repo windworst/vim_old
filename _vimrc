@@ -407,7 +407,7 @@ endfunc
 :map <C-v> "+p<CR>
 :map <C-x> "+x<CR>
 :map <C-z> u
-:map <C-s> :w<CR>
+:map <C-s> :w!<CR>
 :map <C-a> ggVG
 " :map <C-w> :q<CR>
 :map <C-n> :split<CR>
