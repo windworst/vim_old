@@ -83,6 +83,7 @@ Bundle 'gregsexton/gitv'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Yggdroot/indentLine'
 Bundle 'kien/ctrlp.vim'
+Bundle 'markdown'
 " for fun
 Bundle 'vim-scripts/TeTrIs.vim'
 Bundle 'uguu-org/vim-matrix-screensaver'
