@@ -412,7 +412,7 @@ endfunc
 :map <C-a> ggVG
 " :map <C-w> :q<CR>
 :map <C-n> :split<CR>
-:map <C-m> :vsplit<CR>
+:map <A-n> :vsplit<CR>
 :map <F12> :execute ":e ".g:vimrc_path<CR>
 
 
