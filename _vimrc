@@ -81,7 +81,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'gregsexton/gitv'
 Bundle 'tpope/vim-fugitive'
-Bundle 'Yggdroot/indentLine'
+"Bundle 'Yggdroot/indentLine'
 Bundle 'kien/ctrlp.vim'
 Bundle 'markdown'
 " for fun
