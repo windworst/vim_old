@@ -181,7 +181,7 @@ endif
 
 " color
 hi Normal guibg=#000020 guifg=White
-hi LineNr guibg=#003366 guifg=#99ccff ctermbg=7777 ctermfg=blue
+hi LineNr guibg=#003366 guifg=#99ccff ctermbg=239 ctermfg=blue
 hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=#002000
 
 " Show/Hide Menu、Toolbar、RollLink，use Ctrl + F11 Switch
