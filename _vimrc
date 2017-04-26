@@ -25,34 +25,35 @@ endif
 
 " -----------------------------------------------------------------------------
 " VIMRC file path
-let g:vimrc_path = ""
 let g:vimrc_home_path = expand("$HOME/.vimrc")
-let g:vimrc_vimfile_path = expand("$VIM/_vimrc")
+let g:vimdir_home_path = expand("$HOME/.vim/")
 
+let g:vimrc_vimfile_path = expand("$VIM/_vimrc")
+let g:vimdir_vimfile_path = expand("$VIM/vimfiles/")
+
+let g:vimrc_path = ""
+let g:vimdir_path = ""
 if filereadable(g:vimrc_home_path)
   let g:vimrc_path = g:vimrc_home_path
+  let g:vimdir_path = g:vimdir_home_path
 elseif filereadable(g:vimrc_vimfile_path)
   let g:vimrc_path = g:vimrc_vimfile_path
+  let g:vimdir_path = g:vimdir_vimfile_path
 end
-
 " -----------------------------------------------------------------------------
 
 " set the runtime path to include Vundle and initialize
-let vundle_path = "bundle/Vundle.vim/"
-let vundle_vim_path = "autoload/vundle.vim"
-if g:islinux
-  if !filereadable(expand("$HOME/.vim/").vundle_path.vundle_vim_path)
-    :execute "!git clone https://github.com/gmarik/Vundle.vim.git ".expand("$HOME/.vim/").vundle_path
-  end
+let vundle_path = g:vimdir_path."bundle/Vundle.vim/"
+if !filereadable(vundle_path."autoload/vundle.vim")
+  :execute "!git clone https://github.com/gmarik/Vundle.vim.git "."\"".vundle_path."\""
+end
+if filereadable(g:vimrc_home_path)
   set rtp+=~/.vim/bundle/Vundle.vim/
   call vundle#rc()
-else
-  if !filereadable(expand("$VIM/vimfiles/").vundle_path.vundle_vim_path)
-    :execute "!git clone https://github.com/gmarik/Vundle.vim.git ".expand("$VIM/vimfiles/").vundle_path
-  end
+elseif filereadable(g:vimrc_vimfile_path)
   set rtp+=$VIM/vimfiles/bundle/Vundle.vim/
   call vundle#rc('$VIM/vimfiles/bundle/')
-endif
+end
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -146,7 +147,6 @@ set fileformats=unix,dos,mac
 set laststatus=2                                      " Enable Status Message
 set cmdheight=2
 set cursorline
-" set guifont=YaHei_Consolas_Hybrid:h10
 " set nowrap
 set shortmess=atI                                     "remove welcome-page
 set incsearch                                         "vim Realtime-match during search
@@ -162,13 +162,13 @@ endif
 " font
 
 "set guifont=DejaVu\ Sans\ mono\ 11
-set guifont=YaHei_Consolas_Hybrid:h10
+set guifont=Consolas:h10
 if has("gui_gtk2")
   set guifont=DejaVu\ Sans\ Mono\ 11
 elseif has("gui_macvim")
   set guifont=DejaVu_Sans_Mono:h11
 elseif has("gui_win32")
-  set guifont=YaHei_Consolas_Hybrid:h10
+  set guifont=Consolas:h10
 end
 
 if (g:iswindows && g:isGUI)
