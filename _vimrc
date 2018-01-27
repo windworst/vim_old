@@ -82,9 +82,10 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'gregsexton/gitv'
 Bundle 'tpope/vim-fugitive'
-"Bundle 'Yggdroot/indentLine'
+Bundle 'Yggdroot/indentLine'
 Bundle 'kien/ctrlp.vim'
 Bundle 'markdown'
+Plugin 'posva/vim-vue'
 " for fun
 Bundle 'vim-scripts/TeTrIs.vim'
 Bundle 'uguu-org/vim-matrix-screensaver'
@@ -180,8 +181,8 @@ if (g:iswindows && g:isGUI)
 endif
 
 " color
-hi Normal guibg=#000020 guifg=White
-hi LineNr guibg=#003366 guifg=#99ccff ctermbg=239 ctermfg=blue
+hi Normal guibg=#1e1e1e guifg=White
+hi LineNr guibg=#1e1e1e guifg=#99ccff ctermbg=239 ctermfg=blue
 hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=#002000
 
 " Show/Hide Menu、Toolbar、RollLink，use Ctrl + F11 Switch
