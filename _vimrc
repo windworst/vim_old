@@ -86,6 +86,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'kien/ctrlp.vim'
 Plugin 'markdown'
 Plugin 'posva/vim-vue'
+Plugin 'udalov/kotlin-vim'
 " for fun
 Plugin 'vim-scripts/TeTrIs.vim'
 Plugin 'uguu-org/vim-matrix-screensaver'
