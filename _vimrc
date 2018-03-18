@@ -87,6 +87,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'markdown'
 Plugin 'posva/vim-vue'
 Plugin 'udalov/kotlin-vim'
+Plugin 'Yggdroot/LeaderF'
 " for fun
 Plugin 'vim-scripts/TeTrIs.vim'
 Plugin 'uguu-org/vim-matrix-screensaver'
@@ -416,6 +417,7 @@ endfunc
 :map <C-n> :split<CR>
 :map <A-n> :vsplit<CR>
 :map <F12> :execute ":e ".g:vimrc_path<CR>
+:map <C-f> :LeaderfFile<CR>
 
 
 """""""""""""""""""""""""""""""""""""""
