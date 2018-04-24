@@ -70,7 +70,6 @@ Plugin 'mattn/emmet-vim'
 Plugin 'slim-template/vim-slim.git'
 Plugin 'tsaleh/vim-align'
 Plugin 'mileszs/ack.vim'
-Plugin 'scrooloose/syntastic'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'jQuery'
@@ -91,6 +90,8 @@ Plugin 'Yggdroot/LeaderF'
 " for fun
 Plugin 'vim-scripts/TeTrIs.vim'
 Plugin 'uguu-org/vim-matrix-screensaver'
+" may slow
+" Plugin 'scrooloose/syntastic'
 
 filetype plugin indent on    " required
 
