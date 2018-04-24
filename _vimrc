@@ -70,7 +70,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'slim-template/vim-slim.git'
 Plugin 'tsaleh/vim-align'
 Plugin 'mileszs/ack.vim'
-Plugin 'scrooloose/syntastic.git'
+Plugin 'scrooloose/syntastic'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'jQuery'
@@ -216,7 +216,7 @@ map <C-S-F1> :%s/\r\+$//g <CR>
 map <C-S-F2> :%s/\t/  /g<CR>
 
 " syntastic
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = 'W'
 let g:syntastic_auto_loc_list = 1
