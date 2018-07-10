@@ -415,11 +415,10 @@ endfunc
 :map <C-z> u
 :map <C-s> :w!<CR>
 :map <C-a> ggVG
-" :map <C-w> :q<CR>
 :map <C-n> :split<CR>
-:map <A-n> :vsplit<CR>
+:map <C-j> :vsplit<CR>
 :map <F12> :execute ":e ".g:vimrc_path<CR>
-:map <C-f> :LeaderfFile<CR>
+:map <S-f> :LeaderfFile<CR>
 
 
 """""""""""""""""""""""""""""""""""""""
