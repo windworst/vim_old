@@ -86,7 +86,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'markdown'
 Plugin 'posva/vim-vue'
 Plugin 'udalov/kotlin-vim'
-" Plugin 'Yggdroot/LeaderF'
+Plugin 'Yggdroot/LeaderF'
 Plugin 'dart-lang/dart-vim-plugin'
 " for fun
 Plugin 'vim-scripts/TeTrIs.vim'
