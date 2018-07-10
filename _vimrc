@@ -102,7 +102,7 @@ let NERDChristmasTree=1
 let NERDTreeAutoCenter=1
 nnoremap <silent> <F5> :NERDTreeToggle<CR>
 nnoremap <silent> <F6> :TagbarToggle<CR>
-
+nnoremap <silent> <F7> :LeaderfFile<CR>
 
 " indent
 au FileType ruby,javascript,css,eruby,slim,coffee,sh,scss,sass set shiftwidth=2
@@ -418,7 +418,6 @@ endfunc
 :map <C-n> :split<CR>
 :map <C-j> :vsplit<CR>
 :map <F12> :execute ":e ".g:vimrc_path<CR>
-:map <S-f> :LeaderfFile<CR>
 
 
 """""""""""""""""""""""""""""""""""""""
@@ -427,5 +426,4 @@ endfunc
 "
 """"""""""""""""""""""""""""""""""""""""
 " ctrap
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.png,*.jpg,*.jpeg,*.gif "MacOSX/Linux
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+st wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.png,*.jpg,*.jpeg,*.gif "MacOSX/Linux
